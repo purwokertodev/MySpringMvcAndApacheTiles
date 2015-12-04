@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	">
+	
+	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.gmail.com"/>
+        <beans:property name="port" value="587"/>
+        <beans:property name="username" value="wuriyanto007@gmail.com"/>
+        <beans:property name="password" value="sudahlah"/>
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.transport.protocol">smtp</beans:prop>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+                <beans:prop key="mail.debug">true</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+     
+    <!-- You can have some pre-configured messagess also which are ready to send -->
+    <beans:bean id="preConfiguredMessage" class="org.springframework.mail.SimpleMailMessage">
+        <beans:property name="to" value="wuriyanto48@yahoo.co.id"></beans:property>
+        <beans:property name="from" value="wuriyanto007@gmail.com"></beans:property>
+        <beans:property name="subject" value="FATAL - Application crash. Save your job !!"></beans:property>
+    </beans:bean>
+	
+</beans:beans>

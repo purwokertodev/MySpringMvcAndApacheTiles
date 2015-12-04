@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="main-layout" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"/>
+		<put-attribute name="main_menu" value="/WEB-INF/views/layout/main_menu.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
+	</definition>
+	
+	<definition name="home" extends="main-layout">
+		<put-attribute name="title" value="Value Quest"/>
+		<put-attribute name="body" value="/WEB-INF/views/page/home.jsp"/>
+	</definition>
+	
+	<definition name="employee_list" extends="main-layout">
+		<put-attribute name="title" value="Value Quest"/>
+		<put-attribute name="body" value="/WEB-INF/views/page/employee_list.jsp"/>
+	</definition>
+	
+	<definition name="employee_multi_line" extends="main-layout">
+		<put-attribute name="title" value="Value Quest"/>
+		<put-attribute name="body" value="/WEB-INF/views/page/employee_multi_line.jsp"/>
+	</definition>
+	
+	<definition name="cpu_example" extends="main-layout">
+		<put-attribute name="title" value="Value Quest"/>
+		<put-attribute name="body" value="/WEB-INF/views/page/cpu_example.jsp"/>
+	</definition>
+	
+</tiles-definitions>
